@@ -1,24 +1,42 @@
-# GuideOS – Installation
+# Installation von GuideOS
 
-Diese Anleitung beschreibt die Schritte zur Installation von GuideOS auf einem PC oder Notebook. GuideOS basiert auf Debian und nutzt den Cinnamon-Desktop.
+Diese Anleitung beschreibt die Schritte zur Installation von GuideOS auf einem PC oder Notebook.  
+GuideOS basiert auf Debian und verwendet den Cinnamon-Desktop.
+
+---
 
 ## Systemanforderungen
 
-- **CPU**: 64-Bit-Prozessor (Intel oder AMD)
-- **RAM**: mindestens 2 GB (empfohlen: 4 GB oder mehr)
-- **Speicherplatz**: mindestens 20 GB (empfohlen: 40 GB)
-- **Bootfähig über**: USB (UEFI oder Legacy)
+- **Prozessor**: 64-Bit (Intel oder AMD)  
+- **Arbeitsspeicher**: mindestens 2 GB (empfohlen: 4 GB oder mehr)  
+- **Speicherplatz**: mindestens 20 GB (empfohlen: 40 GB oder mehr)  
+- **Bootfähig über**: USB (UEFI oder Legacy BIOS)  
+
+> **Hinweis:** Secure Boot sollte im UEFI deaktiviert sein, da GuideOS es derzeit nicht unterstützt.
+
+---
+
+## Installationsübersicht
+
+1. ISO-Datei herunterladen  
+2. Bootfähigen USB-Stick erstellen  
+3. Vom USB-Stick starten  
+4. Installation durchführen  
+5. Erste Schritte nach der Installation  
+
+---
 
 ## 1. ISO-Datei herunterladen
 
-Die aktuelle ISO findest du hier:
+Die aktuelle ISO-Datei von GuideOS findest du hier:  
+👉 [Download GuideOS](https://guideos.link/download)
 
-👉 [Download GuideOS](https://guideos.link/download)  
+---
 
 ## 2. Bootfähigen USB-Stick erstellen
 
-Nutze eines der folgenden Tools, um die ISO auf einen USB-Stick zu schreiben:
+### Unter Linux (per Terminal mit `dd`)
 
-- **Linux**:  
-  ```bash
-  sudo dd if=guideos.iso of=/dev/sdX bs=4M status=progress && sync
+```bash
+lsblk  # zur Erkennung des USB-Sticks
+sudo dd if=guideos.iso of=/dev/sdX bs=4M status=progress && sync
